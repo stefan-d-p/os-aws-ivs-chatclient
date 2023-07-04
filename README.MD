@@ -1,1 +1,1 @@
-This is a template for creating OutSystems library components Javascript helpers.
+Support Library for the AWS Interactive Video Services Chat Client Widget
