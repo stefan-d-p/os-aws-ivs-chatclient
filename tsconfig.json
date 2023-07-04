@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "amd",
+        "allowJs": false,
+        "checkJs": false,
+        "outFile": "./dist/OutSystemsLib.js",
+        "removeComments": true,
+        "importHelpers": true,
+        "alwaysStrict": true,
+        "moduleResolution": "node",
+        "rootDir": "./src",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
+    },
+    "include": ["src"]
+}

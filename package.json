@@ -1,0 +1,19 @@
+{
+    "name": "os-library-typescript-template",
+    "version": "1.0.0",
+    "description": "OutSystems Client Library Template",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "lint": "eslint ./src/**/*.ts",
+        "lintfix": "eslint --fix ./src/**/*.ts",
+        "prettier": "prettier --config ./.prettierrc.json --write \"**/*.+(js|ts|css)\"",
+        "setup": "npm i && tsc",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Stefan Weber",
+    "license": "BSD-3-Clause",
+    "devDependencies": {
+        "typescript": "^5.1.3"
+    }
+}
