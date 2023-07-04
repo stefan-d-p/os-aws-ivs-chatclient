@@ -1,7 +1,7 @@
 {
     "name": "os-library-typescript-template",
     "version": "1.0.0",
-    "description": "OutSystems Client Library Template",
+    "description": "AWS Interactive Video Services Chat Client Support Library",
     "main": "index.js",
     "scripts": {
         "build": "tsc",
