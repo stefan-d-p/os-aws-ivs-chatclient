@@ -1,5 +1,5 @@
 namespace AWS.IVS.Chat {
-    type RoomSubscribeCallback = (message: IRoomMessage | IRoomEvent | IRoomError) => void;
+    export type RoomSubscribeCallback = (message: IRoomMessage | IRoomEvent | IRoomError) => void;
 
     enum SocketEvents {
         open = 'open',
