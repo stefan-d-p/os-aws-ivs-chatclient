@@ -1,5 +1,5 @@
 namespace AWS.IVS.Chat {
-    export type RoomSubscribeCallback = (message: IRoomMessage | IRoomEvent | IRoomError) => void;
+    export type RoomSubscribeCallback = (message: string) => void;
 
     enum SocketEvents {
         open = 'open',
@@ -18,29 +18,6 @@ namespace AWS.IVS.Chat {
         Id: string;
         RequestId: string;
         Type: string;
-    }
-
-    export interface IRoomMessage extends IMessage {
-        Content: string;
-        Sender: ISender;
-        Attributes: Record<string, string>;
-        SendTime: Date;
-    }
-
-    export interface ISender {
-        UserId: string;
-        Attributes: Record<string, string>;
-    }
-
-    export interface IRoomEvent extends IMessage {
-        EventName: string;
-        Attributes: Record<string, string>;
-        SendTime: Date;
-    }
-
-    export interface IRoomError extends IMessage {
-        ErrorCode: number;
-        ErrorMessage: string;
     }
 
     export class Room {
@@ -139,15 +116,15 @@ namespace AWS.IVS.Chat {
             switch (obj.Type) {
                 case 'EVENT':
                     let eventCallback = this._subscriptions.get(SubscriptionEvents.event);
-                    if (eventCallback) eventCallback(obj as IRoomEvent);
+                    if (eventCallback) eventCallback(ev.data);
                     break;
                 case 'MESSAGE':
                     let messageCallback = this._subscriptions.get(SubscriptionEvents.message);
-                    if (messageCallback) messageCallback(obj as IRoomMessage);
+                    if (messageCallback) messageCallback(ev.data);
                     break;
                 case 'ERROR':
                     let errorCallback = this._subscriptions.get(SubscriptionEvents.error);
-                    if (errorCallback) errorCallback(obj as IRoomError);
+                    if (errorCallback) errorCallback(ev.data);
                     break;
             }
         };
