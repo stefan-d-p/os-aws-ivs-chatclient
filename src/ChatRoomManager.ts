@@ -32,6 +32,16 @@ namespace AWS.IVS.Chat {
         _room.sendMessage(content);
     };
 
+    export const disconnectUser = (uniqueId: string, userId: string): void => {
+        const _room = getRoomByUniqueId(uniqueId);
+        _room.disconnectUser(userId);
+    };
+
+    export const deleteMessage = (uniqueId: string, id: string, reason?: string): void => {
+        const _room = getRoomByUniqueId(uniqueId);
+        _room.deleteMessage(id, reason);
+    };
+
     export const disconnectRoom = (uniqueId: string): void => {
         const _room = getRoomByUniqueId(uniqueId);
         _room.disconnect();
